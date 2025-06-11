@@ -1,40 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Admin Panel with OTP Authentication
 
-## Getting Started
+### 👨‍💻 Candidate Name: Shravan More  
+### 📄 Assignment: Admin Panel with OTP Authentication  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is a minimal **Admin Dashboard** built with **Next.js**, implementing **OTP-based authentication** for secure admin access. After login, it displays a list of users retrieved from an authorized API. The app also supports user detail viewing and local caching for performance.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🔐 Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- **Admin OTP Login Flow**
+  - `sendOtp`: Sends OTP to the admin's phone
+  - `verifyOtp`: Verifies OTP and retrieves token
+- **Protected Routes**
+  - `/admin/dashboard` is accessible only to authenticated users
+- **User Management**
+  - Fetch and display all users via `/users` API
+  - Click a user to view their individual details
+- **Search Functionality**
+  - Search users by name on the dashboard
+- **Caching**
+  - Stores users in `localStorage` to avoid unnecessary re-fetching
+- **Logout**
+  - Clears token and cached data, redirects to login
+- **Loading Indicators**
+  - Displays status during data fetching
+- **Modern UI**
+  - Clean and responsive design with vanilla CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📁 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://axios-http.com/)
+- [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 API Endpoints Used
 
-## Deploy on Vercel
+- `POST /auth/admin/sendOtp`
+- `POST /auth/admin/verifyOtp`
+- `GET /users`
+- `GET /users/:id`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All API requests use **Bearer Token** for authentication.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## 🔄 Setup & Run Locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/admin-panel-otp-auth.git
+   cd admin-panel
+
+2. Install dependencies:
+
+    npm install
+
+3. Run the development server:
+
+    npm run dev
+
+4. Open http://localhost:3000
