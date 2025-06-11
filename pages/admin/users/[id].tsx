@@ -1,4 +1,5 @@
-// pages/admin/users/[id].tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -25,7 +26,7 @@ export default function UserDetails() {
         console.error("User fetch failed", err);
         router.push("/admin/login");
       });
-  }, [id]);
+  }, [id, router]);
 
   if (!user) return <div>Loading...</div>;
 
