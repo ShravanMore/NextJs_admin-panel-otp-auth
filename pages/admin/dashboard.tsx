@@ -3,8 +3,14 @@ import { useRouter } from "next/router";
 import axios from "axios";
 
 export default function Dashboard() {
-  const [users, setUsers] = useState<any[]>([]);
-  const [filteredUsers, setFilteredUsers] = useState<any[]>([]);
+    interface User {
+    id: number;
+    name: string;
+    email: string;
+    [key: string]: any; // optional fallback
+    }
+    const [users, setUsers] = useState<User[]>([]);
+    const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const router = useRouter();

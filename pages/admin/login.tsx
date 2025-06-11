@@ -18,6 +18,7 @@ export default function LoginPage() {
       setStep(2);
     } catch (err) {
       alert("Failed to send OTP");
+      console.error(err);
     }
   };
 
